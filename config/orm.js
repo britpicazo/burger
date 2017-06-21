@@ -17,9 +17,7 @@ function objToSql(ob) {
   var arr = [];
 
   for (var key in ob) {
-    if (Object.hasOwnProperty.call(ob, key)) {
       arr.push(key + "=" + ob[key]);
-    }
   }
 
   return arr.toString();
@@ -74,7 +72,4 @@ var orm = {
   }
 };
 
-
-
-// Export the orm object for the model (cat.js).
 module.exports = orm;

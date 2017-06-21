@@ -6,35 +6,27 @@ var burger = require('../models/burger.js')
 
 // Routes
 // ==================================================
-router.get("/", function (req, res) {
-    burger.all(function (data) {
-        var hbsObject = {
-            burgers: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
+router.get("/", function(req, res) {
+    res.redirect("/burgers");
+});
+
+router.get("/burgers", function(req, res) {
+    //console.log(res);
+    burger.all(function(burgerData) {
+        res.render("index", {burger_data: burgerData });
     });
 });
 
-router.post("/", function (req, res) {
-    burger.create([
-        "burger_name", "devoured"
-    ], [
-            req.body.name, req.body.devoured
-        ], function () {
-            res.redirect("/");
-        });
+router.post("/burgers/create", function (req, res) {
+    burger.create(req.body.b_name, function(result) {
+    res.redirect("/");
+  });
 });
 
-router.put("/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
-    console.log("condition", condition);
-
-    burger.update({
-        devoured: req.body.devoured
-    }, condition, function () {
-        res.redirect("/");
-    });
+router.put("/burgers/update", function (req, res) {
+    burger.update(req.body.burger_id, function(result) {
+    res.redirect("/");
+  });
 });
 
 // Export routes for server.js to use.
