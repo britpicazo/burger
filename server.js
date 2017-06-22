@@ -26,8 +26,8 @@ app.use(express.static(__dirname + "/public"));
 var burgers_controller = require('./controllers/burgers_controller.js');
 
 app.use("/", burgers_controller);
-app.use("/update", burgers_controller);
-app.use("/create", burgers_controller);
+// app.use("/update", burgers_controller);
+// app.use("/create", burgers_controller);
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
