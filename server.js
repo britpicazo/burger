@@ -7,7 +7,7 @@ var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
 
 // Specify the port
-var PORT = process.env.port || 8008;
+var PORT = process.env.PORT || 8008;
 
 // Create an instance of the express app
 var app = express();
