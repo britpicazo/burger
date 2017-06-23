@@ -3,6 +3,7 @@ body{
 }
 
 .jumbotron{
+    padding-top: 1%;
     background-color: #fffd89;
     padding-bottom: 1%;
 }
