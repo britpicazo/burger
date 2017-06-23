@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
         <img src="/assets/img/burger.png">
         <h1> Eat-Da-Burger! </h1>
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="panel-panel default">
                 <ul class="list-group">
                     {{#each burger_data}} {{#unless this.devoured}}
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <ul class="list-group">
                     {{#each burger_data}} {{#if this.devoured}}
